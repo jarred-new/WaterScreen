@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<InstallForgeProject>
+  <Metadata productVersion="1.6.1" projectFileVersion="2.0"/>
+  <ProductInformation>
+    <Name>WaterScreen</Name>
+    <Version>1.0</Version>
+    <CompanyName>Jarred</CompanyName>
+    <WebURI/>
+  </ProductInformation>
+  <InstallerConfiguration>
+    <Prerequisites>
+      <OperatingSystem check="true">
+        <WindowsXP>true</WindowsXP>
+        <WindowsServer2003>true</WindowsServer2003>
+        <WindowsVista>true</WindowsVista>
+        <WindowsServer2008>true</WindowsServer2008>
+        <Windows7>true</Windows7>
+        <Windows8>true</Windows8>
+        <Windows10>true</Windows10>
+        <WindowsServer2016>true</WindowsServer2016>
+        <WindowsServer2019>true</WindowsServer2019>
+        <WindowsServer2022>true</WindowsServer2022>
+        <Windows11>true</Windows11>
+        <WindowsServer2025>true</WindowsServer2025>
+      </OperatingSystem>
+    </Prerequisites>
+    <UserInterface>
+      <WizardImage filePath="C:\Program Files (x86)\solicus\InstallForge\images\Wizard_1.bmp"/>
+      <HeaderImage filePath="C:\Program Files (x86)\solicus\InstallForge\images\Header_3.png"/>
+      <Label isEnabled="true"/>
+      <VisualStyle isEnabled="true"/>
+    </UserInterface>
+    <InstallationFiles defaultInstallationPath="&lt;ProgramFiles&gt;\&lt;Company&gt;\&lt;AppName&gt;\" isDefaultInstallationPathAlterable ="true">
+      <InstallationFile size="2.4 MB" type="exe">C:\Users\jarre\Documents\WaterScreen\Release\WaterScreen.exe</InstallationFile>
+      <InstallationFile size="6.4 MB" type="pdb">C:\Users\jarre\Documents\WaterScreen\Release\WaterScreen.pdb</InstallationFile>
+      <InstallationFile size="N/A" type="[Folder]">C:\Users\jarre\Documents\WaterScreen\Release\displaycmd</InstallationFile>
+    </InstallationFiles>
+    <Languages/>
+    <Variables/>
+    <Commands/>
+    <Registry/>
+    <Shortcuts defaultPath="&lt;Company&gt;\&lt;AppName&gt;\" isDefaultPathAlterable="true" isCreateStartmenuShortcutsForAllUsers="true" isCreateDesktopShortcutsForAllUsers="true">
+      <Shortcut destination="Desktop" name="WaterScreen" targetFile="&lt;InstallPath&gt;\WaterScreen.exe" commandLineArguments="" iconFilePath="" iconIndex="0"/>
+      <Shortcut destination="Startmenu" name="WaterScreen" targetFile="&lt;InstallPath&gt;\WaterScreen.exe" commandLineArguments="" iconFilePath="" iconIndex="0"/>
+    </Shortcuts>
+    <Serials isDialogEnabled="false" count="1000" mask ="#####-#####-#####-#####"/>
+    <SplashScreen isDialogEnabled="false" delayTime="2">
+      <Image filePath=""/>
+      <Sound isEnabled="false" filePath=""/>
+    </SplashScreen>
+    <License isDialogEnabled="false">
+      <Data>e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcZGVmZjBcbm91aWNvbXBhdFxkZWZsYW5nMTAzM3tcZm9udHRibHtcZjBcZm5pbCBBcmlhbDt9fQ0Ke1wqXGdlbmVyYXRvciBSaWNoZWQyMCAxMC4wLjE5MDQxfVx2aWV3a2luZDRcdWMxIA0KXHBhcmRcZjBcZnMyMFxwYXINCn0NCgA=</Data>
+    </License>
+    <Finish isRebootMachineEnabled="false">
+      <Program executableFilePath="&lt;InstallPath&gt;\WaterScreen.exe" isLaunchEnabled="true" arguments=""/>
+    </Finish>
+  </InstallerConfiguration>
+  <UninstallerConfiguration isPackaged="true">
+    <UninstallerExecutableFileName>Uninstall</UninstallerExecutableFileName>
+    <OpenWebURIAfterUninstallation isEnabled="false">https://</OpenWebURIAfterUninstallation>
+    <CustomDisplayIcon isEnabled="false" iconFilePath="&lt;InstallPath&gt;\"/>
+  </UninstallerConfiguration>
+  <VisualUpdateConfiguration isPackaged="false">
+    <ProductName>&lt;AppName&gt;</ProductName>
+    <ProductVersion>&lt;AppVersion&gt;</ProductVersion>
+    <Language>0</Language>
+    <UpdateScriptURIs>
+      <MainURI>https://</MainURI>
+      <FirstMirrorURI>https://</FirstMirrorURI>
+      <SecondMirrorURI>https://</SecondMirrorURI>
+    </UpdateScriptURIs>
+    <updateExecutableFileName>Update</updateExecutableFileName>
+    <proEditionLicenseKey/>
+    <Program executableFilePath="" isLaunchEnabled="false" isTerminationEnabled="false"/>
+  </VisualUpdateConfiguration>
+  <BuildConfiguration>
+    <SetupFilePath>C:\Users\jarre\Desktop\WaterScreen_1.0_Setup.exe</SetupFilePath>
+    <SetupIconPath>C:\Program Files (x86)\solicus\InstallForge\icons\super-modern.ico</SetupIconPath>
+    <UninstallerIconPath>C:\Program Files (x86)\solicus\InstallForge\icons\super-modern.ico</UninstallerIconPath>
+    <Compression method="0" level="2"/>
+    <CodeSigning isEnabled="false" signToolCommandLine="/n &quot;Subject&quot; /tr http://timestamp.digicert.com /td sha256 /fd sha256 &quot;&lt;ExecutableFilePath&gt;&quot;"/>
+  </BuildConfiguration>
+</InstallForgeProject>
