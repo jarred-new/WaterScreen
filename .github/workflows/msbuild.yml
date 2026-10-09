@@ -18,17 +18,18 @@ jobs:
       run: |
         choco install microsoft-build-tools-2013 --yes --no-progress
 
-    - name: Setup MSBuild Path
-      uses: microsoft/setup-msbuild@v2
-      with:
-        vs-version: '[12.0,13.0)'
+    # FIX: Manually inject the legacy 2013 installation directory into the GitHub runner PATH
+    - name: Add Legacy MSBuild 2013 to Path
+      run: |
+        echo "C:\Program Files (x86)\MSBuild\12.0\Bin" >> $env:GITHUB_PATH
+      shell: powershell
 
     - name: Restore NuGet Packages (Optional)
       run: nuget restore your-solution.sln
 
     - name: Build Solution
       run: |
-        msbuild WaterScreen.sln /p:Configuration=Release /p:Platform="Any CPU"
+        msbuild WaterScreen.sln /p:Configuration=Release /p:Platform="Any CPU" /p:PlatformToolset=v120
 
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
@@ -39,4 +40,3 @@ jobs:
           **/Release/*.dll
           **/Release/*.pdb
         retention-days: 5
-      # Change 'path' to target your specific output folder if you want to upload the entire directory (e.g., bin/Release/)
