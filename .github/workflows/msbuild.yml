@@ -1,0 +1,42 @@
+name: Build Legacy MSVC 2013 Solution
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: windows-2022
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Install MSVC 2013 Build Tools
+      run: |
+        choco install microsoft-build-tools-2013 --yes --no-progress
+
+    - name: Setup MSBuild Path
+      uses: microsoft/setup-msbuild@v2
+      with:
+        vs-version: '[12.0,13.0)'
+
+    - name: Restore NuGet Packages (Optional)
+      run: nuget restore your-solution.sln
+
+    - name: Build Solution
+      run: |
+        msbuild WaterScreen.sln /p:Configuration=Release /p:Platform="Any CPU"
+
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: msvc2013-build-output
+        path: |
+          **/Release/*.exe
+          **/Release/*.dll
+          **/Release/*.pdb
+        retention-days: 5
+      # Change 'path' to target your specific output folder if you want to upload the entire directory (e.g., bin/Release/)
